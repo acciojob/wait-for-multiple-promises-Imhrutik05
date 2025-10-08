@@ -1,4 +1,3 @@
-let time = Math.floor((Math.random() * 3000) + 1);
 
 const createPromise = () => {
 	let delay = Math.random() * 2 + 1;
@@ -15,7 +14,7 @@ let p3 = createPromise();
 
 Promise.all([p1, p2, p3])
 	.then(([r1, r2, r3]) => {
-		const maxTime = Math.max(r1, r2, r2);
+		const maxTime = Math.max(r1, r2, r3);
 		const tbody = document.getElementById('output');
 
 		tbody.innerHTML = `
@@ -40,7 +39,7 @@ Promise.all([p1, p2, p3])
 		let tbody = document.getElementById('output');
 		tbody.innerHTML = `
 			<tr>
-				<td colspan='2'>`Error: ${error.message}`</td>
+				<td colspan='2'>Error: ${error.message}</td>
 			</tr>
 		`;
 	})
